@@ -1,14 +1,46 @@
 <html>
     <head>
     <title>Registration Page</title>
+    <link rel="stylesheet" href="<?php echo base_url() ?>bootstrap/bootstrap.css"/>
+    <link rel="stylesheet" href="<?php echo base_url() ?>bootstrap/style.css"/>
     
     <style type="text/css">
         
     </style>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
     </head>
     
     <body>
-        <h1>User Registration</h1>
+        
+    <div class="topbar">
+      <div class="topbar-inner">
+        <div class="container-fluid">
+<!--          <a class="brand" href="#">Project name</a>-->
+          <ul class="nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <p class="pull-right">Logged in as <a href="#">username</a></p>
+        </div>
+      </div>
+    </div>
+
+        
+        <div class="page-header">
+          <h2 class="ident">Vechana <small>Supporting text or tagline</small></h2>
+        </div>
+       
+       
+        <div class="content">
+            <div class="row">
+          <div class="span8">
+ <div>
+            
+        <h2>User Registration</h2>
         <p>Please fill in the details below</p>
         
         <?php
@@ -16,7 +48,10 @@
             $username = array(
                 'name'  => 'username',
                 'id'    => 'username',
-                'value' => set_value('username')
+                'value' => set_value('username'),
+                'class' => 'xlarge',
+                'size' => '30',
+                'type' => 'text'
             );
             $name = array(
                 'name'  => 'name',
@@ -40,48 +75,55 @@
             );
         ?>
 
-        <ul>
-            <li>
-                <label>Username</label>
-                <div>
+        <form>
+            <fieldset>
+                <legend>Join Vechana today!</legend>
+            <div class="clearfix">
+                <label for="xlInput">Username</label>
+                <div class="input">
                     <?php echo form_input($username); ?>
                 </div>
-            </li>
-            
-            <li>
+            </div>
+                
                 <label>Name</label>
                 <div>
                     <?php echo form_input($name); ?>
                 </div>
-            </li>
-            <li>
                 <label>Email Address</label>
                 <div>
                     <?php echo form_input($email); ?>
                 </div>
-            </li>
-            <li>
                 <label>Password</label>
                 <div>
                     <?php echo form_password($password); ?>
                 </div>
-            </li>
-            <li>
                 <label>Confirm Password</label>
                 <div>
                     <?php echo form_password($password_conf); ?>
                 </div>
-            </li>
-            <li>
                 <?php echo validation_errors(); ?>
-            </li>
-            <li>
                 <div>
                     <?php echo form_submit(array('name' => 'register'), 'Register'); ?>
                 </div>
-            </li>
-        </ul>
+            </fieldset>
+        </form>
         
         <?php echo form_close(); ?>
+        </div>          </div>
+<!--          <div class="span6">
+              <div class="offset4">
+            <h3>Secondary content</h3>
+                </div>
+          </div>-->
+        </div>
+        </div>
+        </div>
+        </div>
+       
+            
+
+
+    </div> <!-- /container -->
+
     </body>
 </html>

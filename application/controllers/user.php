@@ -9,6 +9,7 @@ class User extends CI_Controller{
     
     function index() {
         $this->register();
+//        $this->load->view('view_login');
     }
     
     function register() {
@@ -25,7 +26,6 @@ class User extends CI_Controller{
         if ($this->form_validation->run() == FALSE) {
             // hasn't been run or validation errors
             $this->load->view('view_register', $this->view_data);
-            
         } else {
             // everything is good - process the form - write data into db
             $username = $this->input->post('username');
@@ -83,17 +83,6 @@ class User extends CI_Controller{
             return true;
         }
     }
-//    function _random_string($length) {
-//        $len = $length;
-//        $base='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz123456789';
-//        $max = strlen($base)-1;
-//        $activatecode='';
-//        mt_srand((double)microtime()*1000000);
-//        while (strlen($activatecode)<$len+1)
-//            $activatecode.=$base(mt_rand(0,$max));
-//        return $activatecode;
-//    }
-    
 }
 
 ?>
